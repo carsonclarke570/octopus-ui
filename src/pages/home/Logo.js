@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import Logopng from './../../img/octopus_logo.png';
+
 const useStyles = makeStyles({
   root: {
     pointerEvents: 'none',
