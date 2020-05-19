@@ -42,7 +42,7 @@ export default function Home() {
           <Logo />
         </Grid>
         <Grid item>
-          <Paper elevation={3} />
+          <Paper elevation={0} />
         </Grid>
         <Grid item>
           <Button variant="contained" color="primary" className={classes.button}>
