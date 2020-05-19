@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
@@ -28,6 +27,12 @@ export default function Home() {
 
   const classes = useStyles();
 
+  const url = new URL('https://accounts.spotify.com/authorize');
+  url.searchParams.append('client_id', 'd85f7cf27fea462498777339f76c038b');
+  url.searchParams.append('response_type', 'code');
+  url.searchParams.append('redirect_uri', 'http://localhost:5000/');
+  url.searchParams.append('scope', 'user-library-read');
+
   return(
     <div>
       <Grid
@@ -45,7 +50,7 @@ export default function Home() {
           <Paper elevation={0} />
         </Grid>
         <Grid item>
-          <Button variant="contained" color="primary" className={classes.button}>
+          <Button variant="contained" color="primary" className={classes.button} href={url}>
             Host
           </Button>
         </Grid>

@@ -1,7 +1,10 @@
 import React from 'react';
-import Home from './pages/home/Home';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
+import Home from './pages/home/Home';
+
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
@@ -21,7 +24,11 @@ function App() {
     <div>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Home/>
+        <Router>
+          <Switch>
+            <Route path="/" component={Home} exact />
+          </Switch>
+        </Router>
       </ThemeProvider>
     </div>
   );
