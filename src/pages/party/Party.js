@@ -32,15 +32,15 @@ export default function Party(props) {
 
     const [queue, setQueue] = useState([]);
 
-    useEffect(() => {
-        const fetchQueue = async () => {
-            const result = await axios(
-                `http://localhost:5000/queue?session=${partyId}`,
-            );
-            setQueue(result.data);
-        };
-        fetchQueue();
-    }, [partyId])
+    // useEffect(() => {
+    //     const fetchQueue = async () => {
+    //         const result = await axios(
+    //             `http://localhost:5000/queue?session=${partyId}`,
+    //         );
+    //         setQueue(result.data);
+    //     };
+    //     fetchQueue();
+    // }, [partyId])
 
     useEffect(() => {
         let eventSource = new EventSource(`http://localhost:5000/stream/queue?session=${partyId}`);
