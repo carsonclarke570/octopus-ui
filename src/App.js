@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
 
 import Home from './pages/home/Home';
+import Party from './pages/party/Party';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -27,6 +28,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/" component={Home} exact />
+            <Route path="/party/:partyId" component={Party} exact />
           </Switch>
         </Router>
       </ThemeProvider>
